@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "Array/01_SumOfArray",
+        "Array/02_AverageOfArray",
+        "Array/03_minMax",
+        "Array/04_LinearSearchInArray",
+        "Array/05_MostRepeat",
+        "Array/06_ReverseArray",
+        "Array/07_SortAz",
+        "Sorting/BubbleSort"
+    ]
+}

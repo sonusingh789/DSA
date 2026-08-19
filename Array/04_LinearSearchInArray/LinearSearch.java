@@ -13,12 +13,11 @@ public class LinearSearch {
 
   }
 
-    public static int getSearch(int arr[], int data) {
+  public static int getSearch(int arr[], int data) {
     int i = 0;
     while (i < arr.length) {
       if (arr[i] == data) {
         return i;
-        break;
       }
       i++;
     }
