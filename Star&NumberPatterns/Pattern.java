@@ -168,7 +168,175 @@ public class Pattern {
 
     // --------------------------------------------
     static void pattern7() {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (j >= 9 / 2 - i && j <= 9 / 2 + i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
 
+    static void p7j(int n, int count) {
+
+        if (count >= 9) {
+            return;
+        }
+
+        if (count >= 9 / 2 - n && count <= 9 / 2 + n) {
+            System.out.print("* ");
+        } else {
+            System.out.print("  ");
+        }
+        p7j(n, count + 1);
+    }
+
+    static void p7i(int n) {
+
+        if (n >= 5) {
+            return;
+        }
+        p7j(n, 0);
+        System.out.println();
+        p7i(n + 1);
+    }
+
+    // ------------------------------------------
+
+    static void pattern8() {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (j >= i && j < 9 - i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+    }
+
+    // ---------------------------------------------------------
+    static void pattern9() {
+        for (int i = 0; i < 5; i++) {
+
+            for (int j = 0; j < 9; j++) {
+                if (j >= 9 / 2 - i && j <= 9 / 2 + i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+
+        for (int i = 0; i < 4; i++) {
+
+            for (int j = 0; j < 9; j++) {
+                if (j >= i + 1 && j < 9 - i - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void p91j(int n, int count) {
+        if (count > 8) {
+            return;
+        }
+
+        if (count >= 9 / 2 - n && count <= 9 / 2 + n) {
+            System.out.print("*");
+        } else {
+            System.out.print(" ");
+        }
+
+        p91j(n, count + 1);
+    }
+
+    static void p92j(int n, int count) {
+        if (count > 8) {
+            return;
+        }
+
+        if (count >= n && count <= 8 - n) {
+            System.out.print("*");
+        } else {
+            System.out.print(" ");
+        }
+
+        p92j(n, count + 1);
+    }
+
+    static void p91i(int n) {
+        if (n > 4) {
+            return;
+        }
+
+        p91j(n, 0);
+        System.out.println();
+
+        p91i(n + 1);
+    }
+
+    static void p92i(int n) {
+        if (n > 3) {
+            return;
+        }
+
+        p92j(n + 1, 0);
+        System.out.println();
+
+        p92i(n + 1);
+    }
+
+    static void pattern9Rec(int n) {
+        p91i(n);
+        p92i(n);
+    }
+
+    static void pattern10() {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4 - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern11() {
+        for (int i = 0; i < 5; i++) {
+            int prev = i % 2;
+
+            for (int j = 0; j <= i; j++) {
+                if (prev == 0) {
+                    prev = 1;
+                    System.out.print(1);
+                } else {
+                    prev = 0;
+                    System.out.print(0);
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    static void pattern12(){
+        for(int i=0;i<4;)
     }
 
     public static void main(String[] args) {
@@ -223,6 +391,48 @@ public class Pattern {
         // 1
         // pattern6(); iterative
         // p6i(1); recursive
+
+        // *
+        // ***
+        // *****
+        // *******
+        // *********
+        // pattern7();
+        // p7i(0);
+
+        // ---------------------------------------------
+        // *********
+        // *******
+        // *****
+        // ***
+        // *
+        // pattern8();
+
+        // ----------------------------------------------
+        // *
+        // ***
+        // *****
+        // *******
+        // *********
+        // *******
+        // *****
+        // ***
+        // *
+        // pattern9(); iterative
+        // pattern9Rec(0); recursive
+        // ------------------------------------------------
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+        // pattern10();
+        // ---------------------------------------------------
+        pattern11();
     }
 
 }
