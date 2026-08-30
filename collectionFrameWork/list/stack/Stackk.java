@@ -13,6 +13,10 @@ public class Stackk {
         books.push("Python Book");
         books.push("Java Book");
 
+        // java <---- peek() | pop() | push()
+        // python
+        // c
+
         // To check top element currently present
         System.out.println("Top book: " + books.peek());
 
