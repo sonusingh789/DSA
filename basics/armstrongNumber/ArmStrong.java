@@ -1,27 +1,23 @@
 public class ArmStrong {
 
     static boolean checkArm(int n) {
-        isArmStrong = false;
 
-        String nums = String.ValueOf(n);
+        String nums = String.valueOf(n);
 
         int sum = 0;
-        for (int i = 0; i < lenght(); i++) {
-            sum += math.pow(nums.charAt(i), nums.length());
+
+        for (int i = 0; i < nums.length(); i++) {
+
+            int digit = nums.charAt(i) - '0';
+
+            sum += (int) Math.pow(digit, nums.length());
         }
 
-        String nums2 = String.ValueOf(sum);
-
-        if (nums == nums1) {
-            isArmStrong = true;
-            return isArmStrong;
-        }
-        return isArmStrong;
-
+        return sum == n;
     }
 
-    public static void main(String args) {
-        System.out.println(checkArm(121));
-    }
+    public static void main(String[] args) {
 
+        System.out.println(checkArm(153));
+    }
 }
